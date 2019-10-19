@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Concert;
 use Illuminate\Http\Request;
+use App\Http\Filters\ConcertFilters;
 
 class ConcertsController extends Controller
 {
@@ -12,75 +13,9 @@ class ConcertsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ConcertFilters $filters)
     {
-        $concerts = Concert::paginate(10);
+        $concerts = Concert::filter($filters)->get();
         return view('concerts.index', compact('concerts'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Concert  $concert
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Concert $concert)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Concert  $concert
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Concert $concert)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Concert  $concert
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Concert $concert)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Concert  $concert
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Concert $concert)
-    {
-        //
     }
 }

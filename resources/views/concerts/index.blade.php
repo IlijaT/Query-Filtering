@@ -50,9 +50,9 @@
                   </tr>
                 </tbody>
               </table>
-            <div class="mt-4">
+            {{-- <div class="mt-4">
               {{$concerts->links()}}
-            </div>
+            </div> --}}
         </div>
     </body>
 </html>

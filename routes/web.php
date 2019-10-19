@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('concerts', 'ConcertsController');
+Route::get('concerts', 'ConcertsController@index');
