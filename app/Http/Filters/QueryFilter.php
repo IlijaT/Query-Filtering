@@ -27,9 +27,11 @@ abstract class QueryFilter
       }
       if (strlen($value)) {
         $this->$name($value);
-      } else {
-        $this->$name();
       }
+      // this only if you want to call function if query parameter does not have value for expm. ?city=
+      // else {
+      //   $this->$name();
+      // }
     }
     return $this->builder;
   }

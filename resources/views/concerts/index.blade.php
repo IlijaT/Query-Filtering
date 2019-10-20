@@ -41,13 +41,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                  </tr>
+                  @foreach ($concerts as $concert)
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>{{$concert->title}}</td>
+                      <td>{{$concert->venue}}</td>
+                      <td>{{$concert->city}}</td>
+                      <td>{{$concert->date}}</td>
+                    </tr>
+                  @endforeach
                 </tbody>
               </table>
             {{-- <div class="mt-4">
